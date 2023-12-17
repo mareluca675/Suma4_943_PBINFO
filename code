@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int long long n, grupe, i = 1, s = 0;
+
+int main()
+{
+    cin >> n;
+    
+    if(n % 10 == 0)
+    {
+        cout << (n / 10) * 3 % 10;
+    }
+    else
+    {
+        grupe = n % 10;
+        
+        for(i = 1; i <= grupe; i ++)
+        {
+            s = s + i * i * i * i;
+            
+            s = s % 10;
+        }
+        
+        s += n / 10 * 3 % 10;
+        
+        cout << s % 10;
+    }
+    
+
+    return 0;
+}
